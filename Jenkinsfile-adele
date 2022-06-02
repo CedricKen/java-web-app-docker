@@ -93,7 +93,7 @@ stage('package') {
                sh '''
             
               mvn package
-              ls -l webapp/target
+              ls -l src/main/webapp/target
               pwd
                '''
             }
