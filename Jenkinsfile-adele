@@ -147,7 +147,7 @@ stage('build ') {
 
             steps {
                sh '''
-           docker build -t germaine05/maven-project:$ImageTAG .
+                docker build -t germaine05/maven-project:$ImageTAG .
                '''
             }
         }
