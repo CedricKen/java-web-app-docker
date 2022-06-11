@@ -96,6 +96,7 @@ stage('package') {
             
               mvn package
               ls -l
+              ls -l target/
               
                '''
             }
