@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent { 
+        label 'main'
+         }
    
    environment {
   DOCKERHUB_CREDENTIALS=credentials('dockerhub')
@@ -93,6 +95,7 @@ stage('package') {
                sh '''
             
               mvn package
+              ls -l 
               
                '''
             }
@@ -147,7 +150,7 @@ stage('build ') {
 
             steps {
                sh '''
-                docker build -t germaine05/maven-project:$ImageTAG .
+                docker build -t devopseasylearning2021/cedric_0314:$ImageTAG .
                '''
             }
         }
@@ -170,7 +173,7 @@ stage('build ') {
      stage('Docker push ') {
             steps {
                sh '''
-              docker push germaine05/maven-project:$ImageTAG 
+              docker push devopseasylearning2021/cedric_0314:$ImageTAG 
                 '''
             }
         }
